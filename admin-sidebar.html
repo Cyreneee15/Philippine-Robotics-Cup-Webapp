@@ -1,0 +1,583 @@
+<!-- PRC-WebApp/admin-sidebar.html -->
+<!-- Include this via JS: fetch('admin-sidebar.html') or server-side include -->
+<!-- Mount target: <div id="prc-sidebar-mount"></div> -->
+
+<aside id="prc-sidebar" class="prc-sidebar" aria-label="Admin Navigation">
+
+  <!-- SIDEBAR HEADER -->
+  <div class="sb-header">
+    <div class="sb-logo-wrap">
+      <img src="assets/PRC White Logo.png" alt="PRC" class="sb-logo" onerror="this.style.display='none'" />
+      <div class="sb-brand">
+        <span class="sb-brand-title">PRC Admin</span>
+        <span class="sb-brand-sub">Control Panel</span>
+      </div>
+    </div>
+    <button class="sb-collapse-btn" id="sbCollapseBtn" aria-label="Toggle sidebar" title="Collapse sidebar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- SYSTEM STATUS BADGE -->
+  <div class="sb-status-bar">
+    <span class="sb-status-dot"></span>
+    <span class="sb-status-text">SYS://ONLINE &mdash; PRC_2026</span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="sb-nav" aria-label="Admin sections">
+
+    <div class="sb-nav-section">
+      <span class="sb-nav-label">Overview</span>
+      <ul class="sb-nav-list">
+        <li>
+          <a href="admin-dashboard.php" class="sb-nav-item" data-page="dashboard">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </span>
+            <span class="sb-nav-text">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-analytics.php" class="sb-nav-item" data-page="analytics">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </span>
+            <span class="sb-nav-text">Analytics</span>
+            <span class="sb-nav-badge new">New</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sb-nav-section">
+      <span class="sb-nav-label">Registration</span>
+      <ul class="sb-nav-list">
+        <li>
+          <a href="admin-registrations.php" class="sb-nav-item" data-page="registrations">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <span class="sb-nav-text">All Registrations</span>
+            <span class="sb-nav-badge count" id="sb-reg-count">48</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-teams.php" class="sb-nav-item" data-page="teams">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
+            <span class="sb-nav-text">Teams</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-participants.php" class="sb-nav-item" data-page="participants">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span class="sb-nav-text">Participants</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sb-nav-section">
+      <span class="sb-nav-label">Orders</span>
+      <ul class="sb-nav-list">
+        <li>
+          <a href="admin-orders.php" class="sb-nav-item" data-page="orders">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            </span>
+            <span class="sb-nav-text">All Orders</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-products.php" class="sb-nav-item" data-page="materials">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </span>
+            <span class="sb-nav-text">Products</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sb-nav-section">
+      <span class="sb-nav-label">Content</span>
+      <ul class="sb-nav-list">
+
+        <!-- ── ABOUT (new) ── -->
+        <li>
+          <a href="admin-about.php" class="sb-nav-item" data-page="about">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </span>
+            <span class="sb-nav-text">About Page</span>
+          </a>
+        </li>
+
+        <!-- ── CONTACTS ── -->
+        <li>
+          <a href="admin-contacts.php" class="sb-nav-item" data-page="contacts">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>
+            </span>
+            <span class="sb-nav-text">Contacts</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="admin-categories.php" class="sb-nav-item" data-page="cat-manage">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <span class="sb-nav-text">Categories</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-rankings.php" class="sb-nav-item" data-page="rankings">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            </span>
+            <span class="sb-nav-text">Rankings</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-gallery.php" class="sb-nav-item" data-page="gallery">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </span>
+            <span class="sb-nav-text">Gallery</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sb-nav-section">
+      <span class="sb-nav-label">System</span>
+      <ul class="sb-nav-list">
+        <li>
+          <a href="#" class="sb-nav-item" data-page="users">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+            </span>
+            <span class="sb-nav-text">Admin Users</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="sb-nav-item" data-page="settings">
+            <span class="sb-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </span>
+            <span class="sb-nav-text">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- BOTTOM: ADMIN PROFILE + VIEW SITE -->
+  <div class="sb-footer">
+    <a href="../index.html" target="_blank" class="sb-view-site" title="Open public site">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span>View Public Site</span>
+    </a>
+    <div class="sb-profile">
+      <div class="sb-avatar">AD</div>
+      <div class="sb-profile-info">
+        <span class="sb-profile-name">Admin</span>
+        <span class="sb-profile-role">Super Admin</span>
+      </div>
+      <a href="admin-logout.html" class="sb-logout-btn" title="Logout" aria-label="Logout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      </a>
+    </div>
+  </div>
+
+</aside>
+
+<style>
+/* ═══════════════════════════════════════════════════
+   PRC ADMIN SIDEBAR — admin-sidebar.html
+   Matches the PRC site's neon/cyberpunk aesthetic.
+   Import: Orbitron + Exo 2 from Google Fonts.
+═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --sb-width:        248px;
+  --sb-collapsed:    68px;
+  --sb-bg:           #04031A;
+  --sb-border:       rgba(139,126,255,0.18);
+  --sb-hover:        rgba(139,126,255,0.09);
+  --sb-active:       rgba(139,126,255,0.16);
+  --sb-active-line:  #8B7EFF;
+  --sb-text-hi:      #F2EEFF;
+  --sb-text-mid:     #C8C0F0;
+  --sb-text-soft:    #9A90CC;
+  --sb-text-dim:     #6058A0;
+  --prc-violet:      #8B7EFF;
+  --prc-ice:         #C4EEFF;
+  --creo-volt:       #FFE930;
+  --creo-amber:      #FFA030;
+  --creo-sky:        #FFA030;
+  --font-hud:        'Orbitron', monospace;
+  --font-body:       'Exo 2', sans-serif;
+}
+
+/* ── BASE ── */
+.prc-sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100vh;
+  width: var(--sb-width);
+  background: var(--sb-bg);
+  border-right: 1px solid var(--sb-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 900;
+  transition: width 0.30s cubic-bezier(0.77,0,0.175,1);
+  box-shadow: 4px 0 40px rgba(139,126,255,0.07), 1px 0 0 rgba(139,126,255,0.08);
+}
+.prc-sidebar::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--prc-violet), transparent);
+  opacity: 0.60;
+}
+
+/* COLLAPSED STATE */
+.prc-sidebar.collapsed {
+  width: var(--sb-collapsed);
+}
+.prc-sidebar.collapsed .sb-brand,
+.prc-sidebar.collapsed .sb-status-text,
+.prc-sidebar.collapsed .sb-nav-label,
+.prc-sidebar.collapsed .sb-nav-text,
+.prc-sidebar.collapsed .sb-nav-badge,
+.prc-sidebar.collapsed .sb-profile-info,
+.prc-sidebar.collapsed .sb-view-site span {
+  opacity: 0;
+  pointer-events: none;
+  width: 0; overflow: hidden;
+}
+.prc-sidebar.collapsed .sb-collapse-btn svg {
+  transform: rotate(180deg);
+}
+.prc-sidebar.collapsed .sb-logo-wrap { justify-content: center; }
+.prc-sidebar.collapsed .sb-profile { justify-content: center; gap: 0; }
+.prc-sidebar.collapsed .sb-view-site { justify-content: center; }
+.prc-sidebar.collapsed .sb-footer { padding: 12px 0 16px; }
+.prc-sidebar.collapsed .sb-profile { padding: 12px 0; }
+.prc-sidebar.collapsed .sb-logout-btn { margin-left: 0; }
+
+/* ── HEADER ── */
+.sb-header {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px 16px;
+  border-bottom: 1px solid var(--sb-border);
+  flex-shrink: 0;
+  min-height: 66px;
+}
+.sb-logo-wrap {
+  display: flex; align-items: center; gap: 10px;
+  overflow: hidden; flex: 1; min-width: 0;
+}
+.sb-logo {
+  height: 30px; width: auto; flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(139,126,255,0.50));
+  transition: filter 0.25s;
+}
+.sb-logo-wrap:hover .sb-logo {
+  filter: drop-shadow(0 0 14px rgba(139,126,255,0.80));
+}
+.sb-brand {
+  display: flex; flex-direction: column; overflow: hidden;
+  transition: opacity 0.20s, width 0.30s;
+  white-space: nowrap;
+}
+.sb-brand-title {
+  font-family: var(--font-hud);
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--prc-violet);
+  text-shadow: 0 0 10px rgba(139,126,255,0.60);
+  line-height: 1.2;
+}
+.sb-brand-sub {
+  font-family: var(--font-hud);
+  font-size: 0.50rem; font-weight: 400;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sb-text-dim); margin-top: 2px;
+}
+.sb-collapse-btn {
+  flex-shrink: 0; width: 28px; height: 28px;
+  background: rgba(139,126,255,0.06);
+  border: 1px solid var(--sb-border) !important;
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer !important;
+  transition: background 0.2s, border-color 0.2s;
+  padding: 0;
+  font-family: var(--font-body);
+}
+.sb-collapse-btn svg {
+  width: 14px; height: 14px;
+  stroke: var(--sb-text-soft);
+  transition: transform 0.30s, stroke 0.2s;
+}
+.sb-collapse-btn:hover { background: rgba(139,126,255,0.16); border-color: var(--prc-violet) !important; }
+.sb-collapse-btn:hover svg { stroke: var(--prc-violet); }
+
+/* ── STATUS BAR ── */
+.sb-status-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--sb-border);
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(139,126,255,0.025);
+}
+.sb-status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #44FF88; flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(68,255,136,0.75);
+  animation: sbPulse 1.8s ease-in-out infinite;
+}
+@keyframes sbPulse {
+  0%,100% { opacity:1; } 50% { opacity:0.45; }
+}
+.sb-status-text {
+  font-family: var(--font-hud);
+  font-size: 0.46rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--sb-text-dim);
+  white-space: nowrap;
+  transition: opacity 0.20s, width 0.30s;
+}
+
+/* ── NAV ── */
+.sb-nav {
+  flex: 1; overflow-y: auto; overflow-x: hidden;
+  padding: 10px 0 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139,126,255,0.22) transparent;
+}
+.sb-nav::-webkit-scrollbar { width: 3px; }
+.sb-nav::-webkit-scrollbar-track { background: transparent; }
+.sb-nav::-webkit-scrollbar-thumb { background: rgba(139,126,255,0.28); border-radius: 2px; }
+
+.sb-nav-section { margin-bottom: 6px; }
+.sb-nav-label {
+  display: block;
+  font-family: var(--font-hud);
+  font-size: 0.44rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--sb-text-dim);
+  padding: 8px 20px 5px;
+  white-space: nowrap;
+  transition: opacity 0.20s;
+}
+.sb-nav-list { list-style: none; margin: 0; padding: 0; }
+.sb-nav-item {
+  display: flex; align-items: center; gap: 11px;
+  padding: 9px 16px 9px 18px;
+  font-family: var(--font-body);
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--sb-text-soft);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+  border-left: 2px solid transparent;
+  margin: 1px 0;
+}
+.sb-nav-item::after {
+  content: '';
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 0; background: rgba(139,126,255,0.10);
+  transition: width 0.25s;
+}
+.sb-nav-item:hover {
+  color: var(--sb-text-mid);
+  background: var(--sb-hover);
+  border-left-color: rgba(139,126,255,0.35);
+}
+.sb-nav-item.active {
+  color: var(--prc-violet);
+  background: var(--sb-active);
+  border-left-color: var(--sb-active-line);
+  text-shadow: 0 0 12px rgba(139,126,255,0.40);
+}
+.sb-nav-icon {
+  width: 18px; height: 18px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.sb-nav-icon svg {
+  width: 16px; height: 16px;
+  stroke: currentColor;
+  transition: stroke 0.18s;
+}
+.sb-nav-text {
+  flex: 1; transition: opacity 0.20s; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.sb-nav-badge {
+  font-family: var(--font-hud);
+  font-size: 0.46rem; font-weight: 700;
+  padding: 2px 7px; border-radius: 2px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  transition: opacity 0.20s;
+  clip-path: polygon(3px 0%, 100% 0%, calc(100% - 3px) 100%, 0% 100%);
+}
+.sb-nav-badge.count { background: rgba(139,126,255,0.18); color: var(--prc-violet); border: 1px solid rgba(139,126,255,0.30); }
+.sb-nav-badge.warn  { background: rgba(255,160,48,0.15);  color: var(--creo-amber);  border: 1px solid rgba(255,160,48,0.30); }
+.sb-nav-badge.new   { background: rgba(68,255,136,0.12);  color: #44FF88;            border: 1px solid rgba(68,255,136,0.28); }
+
+/* ── FOOTER ── */
+.sb-footer {
+  flex-shrink: 0;
+  border-top: 1px solid var(--sb-border);
+  padding: 10px 0 14px;
+  background: rgba(139,126,255,0.018);
+}
+.sb-view-site {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 18px;
+  font-family: var(--font-hud);
+  font-size: 0.52rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--sb-text-dim); text-decoration: none;
+  transition: color 0.18s;
+  overflow: hidden;
+  cursor: pointer !important;
+}
+.sb-view-site svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
+.sb-view-site span { white-space: nowrap; transition: opacity 0.20s, width 0.30s; }
+.sb-view-site:hover { color: var(--prc-violet); }
+
+.sb-profile {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px 4px;
+  cursor: default;
+  overflow: hidden;
+}
+.sb-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(139,126,255,0.20);
+  border: 1px solid rgba(139,126,255,0.40);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-hud); font-size: 0.60rem; font-weight: 700;
+  color: var(--prc-violet); letter-spacing: 0.04em;
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(139,126,255,0.22);
+  text-shadow: 0 0 8px rgba(139,126,255,0.60);
+}
+.sb-profile-info {
+  flex: 1; display: flex; flex-direction: column;
+  overflow: hidden; white-space: nowrap;
+  transition: opacity 0.20s, width 0.30s;
+}
+.sb-profile-name {
+  font-family: var(--font-hud); font-size: 0.65rem; font-weight: 600;
+  color: var(--sb-text-hi); letter-spacing: 0.04em;
+}
+.sb-profile-role {
+  font-family: var(--font-hud); font-size: 0.48rem;
+  color: var(--prc-violet); letter-spacing: 0.10em;
+  text-transform: uppercase; margin-top: 1px; opacity: 0.80;
+}
+.sb-logout-btn {
+  flex-shrink: 0; width: 28px; height: 28px;
+  background: rgba(255,80,80,0.06);
+  border: 1px solid rgba(255,80,80,0.20) !important;
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,80,80,0.50);
+  cursor: pointer !important; text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  margin-left: auto;
+}
+.sb-logout-btn svg { width: 13px; height: 13px; stroke: currentColor; }
+.sb-logout-btn:hover { background: rgba(255,80,80,0.16); color: #FF5050; border-color: rgba(255,80,80,0.50) !important; box-shadow: 0 0 10px rgba(255,80,80,0.22); }
+
+/* ── TOOLTIP for collapsed icons ── */
+.prc-sidebar.collapsed .sb-nav-item {
+  position: relative; justify-content: center;
+  padding: 11px 0;
+}
+.prc-sidebar.collapsed .sb-nav-item .sb-nav-icon { margin: 0; }
+.prc-sidebar.collapsed .sb-nav-item:hover::before {
+  content: attr(data-page);
+  position: absolute; left: calc(var(--sb-collapsed) + 8px);
+  top: 50%; transform: translateY(-50%);
+  background: rgba(4,3,26,0.96);
+  border: 1px solid var(--sb-border);
+  color: var(--sb-text-mid);
+  font-family: var(--font-body); font-size: 0.78rem;
+  padding: 5px 12px; border-radius: 3px;
+  white-space: nowrap; z-index: 999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.40);
+  pointer-events: none;
+  text-transform: capitalize;
+}
+
+/* ── MOBILE OVERLAY ── */
+@media (max-width: 900px) {
+  .prc-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.30s cubic-bezier(0.77,0,0.175,1), width 0.30s;
+    width: var(--sb-width) !important;
+  }
+  .prc-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}
+</style>
+
+<script>
+(function() {
+  var sidebar = document.getElementById('prc-sidebar');
+  var colBtn  = document.getElementById('sbCollapseBtn');
+  if (!sidebar || !colBtn) return;
+
+  var STORAGE_KEY = 'prc_sidebar_collapsed';
+  var isCollapsed = localStorage.getItem(STORAGE_KEY) === '1';
+
+  function applyState(collapsed) {
+    sidebar.classList.toggle('collapsed', collapsed);
+    // Notify sibling layout (admin pages listen for this)
+    document.dispatchEvent(new CustomEvent('prc-sidebar-toggle', { detail: { collapsed: collapsed } }));
+  }
+
+  if (isCollapsed) applyState(true);
+
+  colBtn.addEventListener('click', function() {
+    isCollapsed = !isCollapsed;
+    localStorage.setItem(STORAGE_KEY, isCollapsed ? '1' : '0');
+    applyState(isCollapsed);
+  });
+
+  // Highlight active nav item based on current page filename
+  var page = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.sb-nav-item').forEach(function(a) {
+    var href = (a.getAttribute('href') || '').split('/').pop();
+    if (href === page) {
+      a.classList.add('active');
+    } else {
+      a.classList.remove('active');
+    }
+  });
+})();
+</script>

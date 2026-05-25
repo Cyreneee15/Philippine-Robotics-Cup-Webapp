@@ -1,0 +1,119 @@
+<!-- ===== DESKTOP NAV ===== -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo" aria-label="PRC Home">
+      <img src="assets/PRC White Logo.png" alt="Philippine Robotics Cup Logo" />
+      <div class="nav-brand">
+        Philippine Robotics Cup
+        <span>By Creotec Philippines</span>
+      </div>
+    </a>
+
+    <!-- Desktop links -->
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"      data-nav="home">Home</a></li>
+      <li><a href="categories.html" data-nav="categories">Categories</a></li>
+      <li><a href="rankings.html"   data-nav="rankings">Rankings</a></li>
+      <li><a href="gallery.html"    data-nav="gallery">Gallery</a></li>
+      <li><a href="contact.html"    data-nav="contact">Contact Us</a></li>
+
+      <!-- Shop — icon-only button -->
+      <li>
+        <a href="shop.html"
+           data-nav="shop"
+           class="nav-shop-icon"
+           aria-label="Shop — Materials &amp; Kits"
+           title="Shop — Materials &amp; Kits">
+          <i class="fi fi-rr-shopping-cart"></i>
+        </a>
+      </li>
+
+      <!-- Register CTA -->
+      <li><a href="register.html" class="nav-cta" data-nav="register">Register Now</a></li>
+    </ul>
+
+    <!-- Hamburger (mobile) -->
+    <button
+      class="nav-hamburger"
+      id="prc-hamburger"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="prc-mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</nav>
+
+<!-- ===== MOBILE NAV ===== -->
+<nav
+  class="nav-mobile"
+  id="prc-mobile-menu"
+  aria-label="Mobile navigation"
+  aria-hidden="true">
+  <a href="index.html"      data-nav="home">      <i class="fi fi-rr-home"></i>Home</a>
+  <a href="categories.html" data-nav="categories"> <i class="fi fi-rr-trophy"></i>Categories</a>
+  <a href="rankings.html"   data-nav="rankings">   <i class="fi fi-rr-list-check"></i>Rankings</a>
+  <a href="gallery.html"    data-nav="gallery">    <i class="fi fi-rr-picture"></i>Gallery</a>
+  <a href="contact.html"    data-nav="contact">    <i class="fi fi-rr-envelope"></i>Contact Us</a>
+  <a href="shop.html"       data-nav="shop">       <i class="fi fi-rr-shopping-cart"></i>Shop</a>
+  <a href="register.html"   class="nav-cta" data-nav="register">
+    <i class="fi fi-rr-pen-field"></i>Register Now
+  </a>
+</nav>
+
+<!-- ===== NAV-ONLY STYLES ===== -->
+<style>
+  /* ── Shop icon link ── */
+  .nav-links .nav-shop-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0 !important;          /* override any inherited padding */
+    border: 1px solid rgba(139,126,255,0.30);
+    background: rgba(139,126,255,0.04);
+    border-radius: 3px;
+    color: var(--text-mid);
+    font-size: 1rem;
+    transition: all 0.22s;
+    margin: 0 4px;
+    flex-shrink: 0;
+  }
+  .nav-links .nav-shop-icon:hover,
+  .nav-links .nav-shop-icon.active {
+    color: var(--creo-amber);
+    border-color: rgba(255,160,48,0.60);
+    background: rgba(255,160,48,0.08);
+    box-shadow: 0 0 14px rgba(255,160,48,0.28);
+    text-shadow: none;
+  }
+
+  /* Active underline for standard links (injected by loader) */
+  .nav-links a.active:not(.nav-cta):not(.nav-shop-icon) {
+    color: var(--prc-violet);
+    text-shadow: 0 0 12px rgba(139,126,255,0.85);
+  }
+  .nav-links a.active:not(.nav-cta):not(.nav-shop-icon)::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; left: 14px; right: 14px;
+    height: 1px;
+    background: var(--prc-violet);
+    box-shadow: 0 0 6px rgba(139,126,255,0.80);
+  }
+  .nav-links a {
+    position: relative; /* needed for ::after underline */
+  }
+
+  /* Mobile active */
+  .nav-mobile a.active:not(.nav-cta) {
+    color: var(--prc-violet);
+    background: rgba(139,126,255,0.07);
+    text-shadow: 0 0 10px rgba(139,126,255,0.55);
+  }
+</style>
